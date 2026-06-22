@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="mt-5 flex items-center gap-2">
               <img
                 src="/logo-cat.png"
-                alt="VatsTuitions friendly cat mascot"
+                alt="BrightNest Tuition friendly cat mascot"
                 className="w-10 h-10 object-contain opacity-70"
               />
               <span className="text-xs text-cream/40 italic">Our Mascot 🐱</span>
@@ -128,7 +128,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/40">
-          <p>© {new Date().getFullYear()} VatsTuitions · {siteConfig.OWNER_NAMES}</p>
+          <p>© {new Date().getFullYear()} BrightNest Tuition · {siteConfig.OWNER_NAMES}</p>
           <p className="text-center">Made with ❤️ for students of Subhash Nagar, Meerut</p>
           <p>
             <a href={`mailto:${siteConfig.EMAIL}`} className="hover:text-gold transition-colors">

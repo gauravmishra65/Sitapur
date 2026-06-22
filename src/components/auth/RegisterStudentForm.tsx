@@ -104,7 +104,7 @@ export default function RegisterStudentForm() {
         </motion.div>
         <h2 className="text-2xl font-display font-bold text-navy mb-2">Account Created!</h2>
         <p className="text-ink/70 mb-6">
-          Welcome to VatsTuitions! We've sent a verification email to your address.
+          Welcome to BrightNest Tuition! We've sent a verification email to your address.
           Please verify your email, then log in to access your student portal.
         </p>
         <div className="bg-gold/10 border border-gold/30 rounded-card p-4 mb-6 text-sm text-navy">
@@ -135,7 +135,7 @@ export default function RegisterStudentForm() {
           <Logo size="md" showWordmark showTagline />
         </Link>
         <h1 className="text-2xl font-display font-bold text-navy">Create Student Account</h1>
-        <p className="text-ink/70 mt-1">Join VatsTuitions — your child's personalized learning portal</p>
+        <p className="text-ink/70 mt-1">Join BrightNest Tuition — your child's personalized learning portal</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
@@ -311,7 +311,7 @@ export default function RegisterStudentForm() {
         </p>
       </div>
       <div className="mt-2 text-center">
-        <Link to="/" className="text-sm text-navy/60 hover:text-navy">← Back to VatsTuitions website</Link>
+        <Link to="/" className="text-sm text-navy/60 hover:text-navy">← Back to BrightNest Tuition website</Link>
       </div>
     </motion.div>
   );

@@ -1,12 +1,12 @@
 // ============================================================
-// siteConfig.ts — VatsTuitions Site Configuration
+// siteConfig.ts — BrightNest Tuition Site Configuration
 // ALL editable content lives here. Update once, reflects everywhere.
 // GitHub: https://github.com/gauravmishra65/Sitapur
 // ============================================================
 
 export const siteConfig = {
   // ── Identity ───────────────────────────────────────────────
-  SITE_NAME:       'VatsTuitions',
+  SITE_NAME:       'BrightNest Tuition',
   TAGLINE:         'Small Batches. Every Child Gets Noticed.',
   HINDI_TAGLINE:   'हर बच्चे पर पूरा ध्यान — छोटी क्लास, बेहतर नतीजे',
   OWNER_NAMES:     'Deepika & Sanjeev Vats',
@@ -15,7 +15,7 @@ export const siteConfig = {
   // ── Contact (replace with real values before going live) ───
   PHONE:           '9999999999',          // ← replace with real number
   WHATSAPP:        '919999999999',        // ← country code + number, no +
-  WHATSAPP_MESSAGE:'Hi! I\'m interested in VatsTuitions for my child.',
+  WHATSAPP_MESSAGE:'Hi! I\'m interested in BrightNest Tuition for my child.',
   EMAIL:           'gaurav.mishra65@gmail.com',
 
   // ── Address ────────────────────────────────────────────────

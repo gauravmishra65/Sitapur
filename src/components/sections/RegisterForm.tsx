@@ -83,7 +83,7 @@ export default function RegisterForm() {
       // on the interest_registrations table INSERT event, sending to:
       // gaurav.mishra65@gmail.com
       // ──────────────────────────────────────────────────────────────────────
-      console.log('[VatsTuitions] New interest registration:', data);
+      console.log('[BrightNest Tuition] New interest registration:', data);
       await new Promise(r => setTimeout(r, 1000)); // simulate async
       setSubmitSuccess(true);
     } catch {

@@ -1,4 +1,4 @@
-# VatsTuitions 🎓
+# BrightNest Tuition 🎓
 ### Small Batches. Every Child Gets Noticed.
 **हर बच्चे पर पूरा ध्यान — छोटी क्लास, बेहतर नतीजे**
 
@@ -120,7 +120,7 @@ Full SQL schema in `CLAUDE.md`.
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_ANON_KEY`
 4. Deploy — Vercel auto-detects Vite
-5. Add custom domain `vatstutions.com` in Vercel settings
+5. Add custom domain `brightnesttuition.com` in Vercel settings
 
 ---
 

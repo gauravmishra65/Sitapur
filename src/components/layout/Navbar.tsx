@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
 
             {/* Logo */}
-            <Link to="/" aria-label="VatsTuitions home">
+            <Link to="/" aria-label="BrightNest Tuition home">
               <Logo size="sm" showWordmark showTagline={false} />
             </Link>
 

@@ -8,7 +8,7 @@ import { siteConfig } from '../config/siteConfig';
 export default function Dashboard() {
   const { user, profile, signOut } = useAuth();
 
-  const waUrl = `https://wa.me/${siteConfig.WHATSAPP}?text=${encodeURIComponent('Hi! I have a question about my batch at VatsTuitions.')}`;
+  const waUrl = `https://wa.me/${siteConfig.WHATSAPP}?text=${encodeURIComponent('Hi! I have a question about my batch at BrightNest Tuition.')}`;
 
   return (
     <div className="min-h-screen bg-cream">
@@ -43,7 +43,7 @@ export default function Dashboard() {
           <h1 className="text-3xl font-display font-bold text-navy mb-1">
             Hello, {profile?.full_name?.split(' ')[0] ?? 'Student'}! 👋
           </h1>
-          <p className="text-ink/70">Welcome to your VatsTuitions student portal.</p>
+          <p className="text-ink/70">Welcome to your BrightNest Tuition student portal.</p>
         </motion.div>
 
         {/* Cards Grid */}
@@ -159,7 +159,7 @@ export default function Dashboard() {
           <ul className="space-y-2 text-sm text-ink">
             <li className="flex items-start gap-2">
               <span className="text-coral mt-0.5">•</span>
-              <span>Welcome to VatsTuitions! Your batch details will be shared via WhatsApp within 24 hours.</span>
+              <span>Welcome to BrightNest Tuition! Your batch details will be shared via WhatsApp within 24 hours.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-coral mt-0.5">•</span>

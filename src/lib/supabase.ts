@@ -14,7 +14,7 @@ const supabaseAnon = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 
 if (!supabaseUrl || !supabaseAnon) {
   console.error(
-    '[VatsTuitions] Missing Supabase env vars.\n' +
+    '[BrightNest Tuition] Missing Supabase env vars.\n' +
     'Copy .env.example → .env.local and fill in your Supabase project URL and anon key.'
   );
 }

@@ -1,5 +1,5 @@
 // src/components/ui/Logo.tsx
-// VatsTuitions Open Book V Mark — inline SVG, no external deps
+// BrightNest Tuition Open Book V Mark — inline SVG, no external deps
 // Design: V shape = two open book pages (navy + coral), gold ring, teal star
 
 import { siteConfig } from '../../config/siteConfig';
@@ -40,7 +40,7 @@ export default function Logo({
         height={px}
         viewBox="0 0 220 220"
         role="img"
-        aria-label="VatsTuitions Open Book V mark"
+        aria-label="BrightNest Tuition Open Book V mark"
         xmlns="http://www.w3.org/2000/svg"
         style={{ flexShrink: 0 }}
       >
@@ -67,8 +67,8 @@ export default function Logo({
       {showWordmark && (
         <div style={{ lineHeight: 1 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 700, fontSize: wms, lineHeight: 1 }}>
-            <span style={{ color: isDark ? '#fbf4e6' : '#0e2a47' }}>Vats</span>
-            <span style={{ color: '#d9603f', fontStyle: 'italic', fontWeight: 600 }}>Tuitions</span>
+            <span style={{ color: isDark ? '#fbf4e6' : '#0e2a47' }}>BrightNest</span>
+            <span style={{ color: '#d9603f', fontStyle: 'italic', fontWeight: 600 }}> Tuition</span>
           </div>
           {showTagline && (
             <div style={{

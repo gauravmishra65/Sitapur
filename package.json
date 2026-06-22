@@ -1,8 +1,8 @@
 {
-  "name": "vatstuitions",
+  "name": "brightnest-tuition",
   "private": true,
   "version": "1.0.0",
-  "description": "VatsTuitions - Home & Online Tuition website for Meerut, India",
+  "description": "BrightNest Tuition - Home & Online Tuition website for Meerut, India",
   "type": "module",
   "scripts": {
     "dev": "vite",

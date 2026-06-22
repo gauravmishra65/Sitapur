@@ -148,7 +148,7 @@ export default function LoginForm() {
 
       {/* Register link */}
       <div className="mt-8 text-center p-4 bg-paper rounded-card border border-navy/10">
-        <p className="text-sm text-ink/70 mb-2">New student at VatsTuitions?</p>
+        <p className="text-sm text-ink/70 mb-2">New student at BrightNest Tuition?</p>
         <Link
           to="/register"
           className="font-bold text-coral hover:underline"
@@ -160,7 +160,7 @@ export default function LoginForm() {
       {/* Back to site */}
       <div className="text-center mt-4">
         <Link to="/" className="text-sm text-navy/60 hover:text-navy">
-          ← Back to VatsTuitions website
+          ← Back to BrightNest Tuition website
         </Link>
       </div>
 

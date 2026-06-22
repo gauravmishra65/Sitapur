@@ -41,7 +41,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-navy">
-            Why Parents Choose <span className="text-coral italic">VatsTuitions</span>
+            Why Parents Choose <span className="text-coral italic">BrightNest Tuition</span>
           </h2>
           <p className="mt-3 text-ink/60 text-lg">
             We keep batches small on purpose — so attention stays big.

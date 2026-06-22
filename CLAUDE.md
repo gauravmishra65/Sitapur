@@ -1,10 +1,10 @@
-# VatsTuitions — Claude Code Master Instructions
+# BrightNest Tuition — Claude Code Master Instructions
 # GitHub: https://github.com/gauravmishra65/Sitapur
 # Contact: gaurav.mishra65@gmail.com
 # Owner: Deepika & Sanjeev Vats
 
 ## PROJECT OVERVIEW
-Full-stack marketing + lead-capture website for VatsTuitions — a home-based and
+Full-stack marketing + lead-capture website for BrightNest Tuition — a home-based and
 online tuition service in Meerut, India. Nursery to Class 12, all subjects.
 Includes student registration/login portal (Supabase Auth) and an interest
 registration form (no payment, lead-gen only).
@@ -21,7 +21,7 @@ registration form (no payment, lead-gen only).
 
 ## REPOSITORY STRUCTURE
 ```
-vatstuitions/
+brightnest-tuition/
 ├── CLAUDE.md                    ← YOU ARE HERE
 ├── package.json
 ├── vite.config.ts
@@ -135,13 +135,13 @@ CREATE POLICY "Anyone can register interest"
 ## COMPONENT IMPLEMENTATION RULES
 
 ### Logo (src/components/ui/Logo.tsx)
-Use the VatsTuitions Open Book V SVG mark (NOT the uploaded cat image — that was
+Use the BrightNest Tuition Open Book V SVG mark (NOT the uploaded cat image — that was
 a test upload). The logo is:
 - Circle ring in gold (#e3a93c)
 - Left book page: navy (#0e2a47)
 - Right book page: coral (#d9603f)
 - 4-point star: teal (#1f6f6b)
-- Wordmark: "Vats" in Fraunces Bold navy + "Tuitions" in Fraunces Italic coral
+- Wordmark: "BrightNest" in Fraunces Bold navy + "Tuition" in Fraunces Italic coral
 - Tagline below: "NURSERY TO CLASS 12" in Manrope, teal, spaced
 
 The cat logo (public/logo-cat.png) should be displayed in the footer as a
@@ -164,13 +164,13 @@ colors: {
 ### siteConfig.ts — ALL CONSTANTS HERE, NOTHING HARDCODED
 ```ts
 export const siteConfig = {
-  SITE_NAME: "VatsTuitions",
+  SITE_NAME: "BrightNest Tuition",
   TAGLINE: "Small Batches. Every Child Gets Noticed.",
   HINDI_TAGLINE: "हर बच्चे पर पूरा ध्यान — छोटी क्लास, बेहतर नतीजे",
   OWNER_NAMES: "Deepika & Sanjeev Vats",
   PHONE: "9999999999",            // ← Replace with real number
   WHATSAPP: "919999999999",       // ← Replace (country code, no +)
-  WHATSAPP_MESSAGE: "Hi! I'm interested in VatsTuitions for my child.",
+  WHATSAPP_MESSAGE: "Hi! I'm interested in BrightNest Tuition for my child.",
   EMAIL: "gaurav.mishra65@gmail.com",
   ADDRESS_LINE1: "Gali No. 2, Subhash Nagar",
   ADDRESS_LINE2: "Meerut, Uttar Pradesh",
@@ -215,7 +215,7 @@ const onSubmit = async (data: RegistrationFormData) => {
     // on the interest_registrations table INSERT event, sending to:
     // gaurav.mishra65@gmail.com
     // ──────────────────────────────────────────────────────────────────────
-    console.log('[VatsTuitions] New interest registration:', data);
+    console.log('[BrightNest Tuition] New interest registration:', data);
     await new Promise(r => setTimeout(r, 1000)); // simulate async
     setSubmitSuccess(true);
   } catch (err) {
