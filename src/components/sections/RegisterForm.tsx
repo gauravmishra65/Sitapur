@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { siteConfig } from '../../config/siteConfig';
+import { supabase } from '../../lib/supabase';
 import type { RegistrationFormData } from '../../types';
 
 const schema = z.object({
@@ -71,20 +72,21 @@ export default function RegisterForm() {
     setIsSubmitting(true);
     setSubmitError('');
     try {
-      // ── BACKEND INTEGRATION POINT ──────────────────────────────────────────
-      // Currently: logs to console. To connect Supabase, replace this block:
-      //
-      // const { error } = await supabase
-      //   .from('interest_registrations')
-      //   .insert([{ ...data, created_at: new Date().toISOString() }]);
-      // if (error) throw error;
-      //
-      // To send email notification too, add a Supabase Edge Function trigger
-      // on the interest_registrations table INSERT event, sending to:
-      // gaurav.mishra65@gmail.com
-      // ──────────────────────────────────────────────────────────────────────
-      console.log('[BrightNest Tuition] New interest registration:', data);
-      await new Promise(r => setTimeout(r, 1000)); // simulate async
+      const { error } = await supabase
+        .from('interest_registrations')
+        .insert([{
+          parent_name:       data.parentName,
+          child_name:        data.childName,
+          grade:             data.grade,
+          subjects:          data.subjects,
+          phone:             data.phone,
+          whatsapp:          data.sameWhatsApp ? data.phone : (data.whatsapp ?? null),
+          tuition_mode:      data.tuitionMode,
+          timing_preference: data.timing,
+          interest_type:     data.interestType,
+          message:           data.message ?? null,
+        }]);
+      if (error) throw error;
       setSubmitSuccess(true);
     } catch {
       setSubmitError('Something went wrong. Please call us directly.');
