@@ -54,6 +54,14 @@ export default function Footer() {
                 </li>
               ))}
               <li>
+                <button
+                  onClick={() => scrollTo('#faq')}
+                  className="text-cream/60 hover:text-gold transition-colors"
+                >
+                  FAQs
+                </button>
+              </li>
+              <li>
                 <Link to="/login"    className="text-cream/60 hover:text-gold transition-colors block">Student Login</Link>
               </li>
               <li>

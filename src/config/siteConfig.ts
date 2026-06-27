@@ -66,6 +66,7 @@ export const siteConfig = {
     { label: 'Fees',            href: '#fees' },
     { label: 'Online Classes',  href: '#modes' },
     { label: 'Testimonials',    href: '#testimonials' },
+    { label: 'FAQ',             href: '#faq' },
     { label: 'Contact',         href: '#contact' },
   ],
 
@@ -89,6 +90,50 @@ export const siteConfig = {
     'Class 9', 'Class 10',
     'Class 11 (Science)', 'Class 11 (Commerce)', 'Class 11 (Arts)',
     'Class 12 (Science)', 'Class 12 (Commerce)', 'Class 12 (Arts)',
+  ],
+
+  // ── Trust Stats (animated counters) ────────────────────────
+  STATS: [
+    { value: 200, suffix: '+',  label: 'Students Tutored',    icon: '🎓' },
+    { value: 4,   suffix: '+',  label: 'Years of Excellence', icon: '⭐' },
+    { value: 95,  suffix: '%',  label: 'Parents Satisfied',   icon: '❤️' },
+    { value: 3,   suffix: '',   label: 'Boards Covered',      icon: '📚' },
+  ],
+
+  // ── FAQ ────────────────────────────────────────────────────
+  FAQ: [
+    {
+      q: 'Do you offer a free demo class?',
+      a: "Yes! Every child gets one completely FREE demo session — no obligation, no payment. You meet the teacher, see the teaching style, and then decide. Just register your interest below and we'll schedule a convenient time.",
+    },
+    {
+      q: 'How small are the batches really?',
+      a: "We cap Nursery–Class 8 batches at 6 students and Class 9–12 at 8 students. Every child is seen, corrected, and heard in every session — the opposite of a 30-student coaching centre.",
+    },
+    {
+      q: 'What subjects do you teach?',
+      a: 'Mathematics, Science, English, Hindi, Social Science, Computer Science, and Accounts & Commerce. For Class 11–12, we cover Science, Commerce, and Arts streams. Not sure if your subject is covered? Just ask.',
+    },
+    {
+      q: 'Which school boards do you teach?',
+      a: "CBSE, ICSE, and UP Board. Teaching is adapted to your child's specific board, textbooks, and exam pattern. No generic content — we teach what your school actually tests.",
+    },
+    {
+      q: 'What are the class timings?',
+      a: 'Home classes run Mon–Sat: 7 AM–9 AM (morning) and 4 PM–8 PM (evening). Online classes offer flexible morning, afternoon, and evening slots — tell us your preference when registering.',
+    },
+    {
+      q: 'Is online tuition as effective as in-person?',
+      a: 'For most students, yes. Live online classes use video, screen-sharing, and digital whiteboards. Same teachers, same small batches, same personal attention. WhatsApp doubt support is included for both modes.',
+    },
+    {
+      q: 'Are there any discounts available?',
+      a: '10% sibling discount when you enrol two children together. 5% discount on 3-month advance payment. All fees shown are inclusive — no hidden registration or material charges.',
+    },
+    {
+      q: 'What happens after I submit the interest form?',
+      a: "Deepika or Sanjeev will personally call you within 24 hours to understand your child's needs, suggest the right batch, and schedule your free demo session. No pressure — just a friendly conversation.",
+    },
   ],
 } as const;
 

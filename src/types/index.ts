@@ -46,6 +46,7 @@ export interface FeeRow {
 export interface Testimonial {
   parentName: string;
   childGrade: string;
+  location?:  string;
   quote:      string;
   stars:      number;
   mode?:      'home' | 'online';

@@ -1,20 +1,24 @@
 // src/pages/Home.tsx
 // Main marketing page — all sections assembled in order
 
-import Navbar           from '../components/layout/Navbar';
-import MobileBottomBar  from '../components/layout/MobileBottomBar';
-import Footer           from '../components/layout/Footer';
+import Navbar          from '../components/layout/Navbar';
+import MobileBottomBar from '../components/layout/MobileBottomBar';
+import Footer          from '../components/layout/Footer';
+import WhatsAppFloat   from '../components/ui/WhatsAppFloat';
 
 // Sections
-import Hero           from '../components/sections/Hero';
-import WhyUs          from '../components/sections/WhyUs';
-import Subjects       from '../components/sections/Subjects';
-import Modes          from '../components/sections/Modes';
-import Fees           from '../components/sections/Fees';
-import Testimonials   from '../components/sections/Testimonials';
-import OfferBanner    from '../components/sections/OfferBanner';
-import RegisterForm   from '../components/sections/RegisterForm';
-import Contact        from '../components/sections/Contact';
+import Hero          from '../components/sections/Hero';
+import StatsBar      from '../components/sections/StatsBar';
+import WhyUs         from '../components/sections/WhyUs';
+import HowItWorks    from '../components/sections/HowItWorks';
+import Subjects      from '../components/sections/Subjects';
+import Modes         from '../components/sections/Modes';
+import Fees          from '../components/sections/Fees';
+import Testimonials  from '../components/sections/Testimonials';
+import FAQ           from '../components/sections/FAQ';
+import OfferBanner   from '../components/sections/OfferBanner';
+import RegisterForm  from '../components/sections/RegisterForm';
+import Contact       from '../components/sections/Contact';
 
 export default function Home() {
   return (
@@ -31,11 +35,14 @@ export default function Home() {
 
       <main>
         <Hero />
+        <StatsBar />
         <WhyUs />
+        <HowItWorks />
         <Subjects />
         <Modes />
         <Fees />
         <Testimonials />
+        <FAQ />
         <OfferBanner />
         <RegisterForm />
         <Contact />
@@ -43,6 +50,7 @@ export default function Home() {
 
       <Footer />
       <MobileBottomBar />
+      <WhatsAppFloat />
     </div>
   );
 }
