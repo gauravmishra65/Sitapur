@@ -116,7 +116,7 @@ export default function Hero() {
                 src="/tanrica-geography-10113450_1920.png"
                 alt="Teacher explaining to attentive students in a small classroom"
                 className="relative w-full h-auto"
-                style={{ mixBlendMode: 'multiply' }}
+                style={{ mixBlendMode: 'multiply', transform: 'scaleX(-1)' }}
                 width={520}
                 height={520}
               />
