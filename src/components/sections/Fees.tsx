@@ -81,7 +81,7 @@ export default function Fees() {
         <div className="mt-4 flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-card px-4 py-3 text-sm text-teal-dark">
           <span className="text-base" aria-hidden="true">💡</span>
           <span>
-            <strong>Compare:</strong> coaching centres in Meerut charge ₹4,000–₹8,000/month with
+            <strong>Compare:</strong> coaching centres in Sitapur charge ₹4,000–₹8,000/month with
             30+ students per class. We cap at {siteConfig.MAX_BATCH_SECONDARY} — for a fraction of the cost.
           </span>
         </div>

@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Logo size="sm" variant="dark" showWordmark showTagline />
             <p className="mt-3 text-sm text-cream/60 leading-relaxed">
-              Personalized home & online tuition in Meerut.<br />
+              Personalized home & online tuition in Sitapur.<br />
               Small batches. Real attention. Better results.
             </p>
             <p className="mt-2 text-sm font-devanagari text-gold/80">
@@ -137,7 +137,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/40">
           <p>© {new Date().getFullYear()} BrightNest Tuition · {siteConfig.OWNER_NAMES}</p>
-          <p className="text-center">Made with ❤️ for students of Subhash Nagar, Meerut</p>
+          <p className="text-center">Made with ❤️ for students of Krishnapuri, Sitapur</p>
           <p>
             <a href={`mailto:${siteConfig.EMAIL}`} className="hover:text-gold transition-colors">
               {siteConfig.EMAIL}

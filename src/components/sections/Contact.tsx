@@ -89,7 +89,7 @@ export default function Contact() {
               href={`tel:${siteConfig.PHONE}`}
               className="flex items-center justify-center gap-2 bg-navy text-cream font-bold text-lg py-5 min-h-[56px] rounded-card shadow-card hover:bg-navy-deep transition-colors"
             >
-              📞 Call {siteConfig.OWNER_NAMES.split(' & ')[0]} Now
+              📞 Call Now
             </a>
             <a
               href={waUrl}

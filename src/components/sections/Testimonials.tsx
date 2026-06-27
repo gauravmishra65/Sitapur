@@ -7,7 +7,7 @@ const testimonials: Testimonial[] = [
   {
     parentName: 'Rekha Sharma',
     childGrade: 'Class 8',
-    location: 'Subhash Nagar, Meerut',
+    location: 'Krishnapuri, Sitapur',
     quote:
       "My son used to dread Maths. After 3 months of home tuition with Sanjeev sir, he's actually asking for extra practice sheets. The small batch really makes a difference.",
     stars: 5,
@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
   {
     parentName: 'Anil Kumar',
     childGrade: 'Class 10',
-    location: 'Shastri Nagar, Meerut',
+    location: 'Civil Lines, Sitapur',
     quote:
       "Deepika ma'am explains Science concepts so clearly. We chose online since we live a bit far, and the WhatsApp doubt support has been a lifesaver before exams.",
     stars: 5,
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
   {
     parentName: 'Pooja Singh',
     childGrade: 'Class 5',
-    location: 'Ganga Nagar, Meerut',
+    location: 'Hardoi Road, Sitapur',
     quote:
       "What I appreciate most is how honestly they update us on progress — no sugarcoating, just real feedback every month. Fees are very fair compared to coaching centres nearby.",
     stars: 5,
@@ -59,7 +59,7 @@ export default function Testimonials() {
             What <span className="text-coral italic">Parents</span> Say
           </h2>
           <p className="mt-3 text-ink/60 text-lg">
-            Real feedback from families across Meerut.
+            Real feedback from families across Sitapur.
           </p>
         </div>
 

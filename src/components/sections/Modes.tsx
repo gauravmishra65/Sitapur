@@ -40,7 +40,7 @@ export default function Modes() {
             <Badge variant="teal">Live Online</Badge>
             <h3 className="text-2xl font-bold text-navy mt-4 mb-2">Online Tuition</h3>
             <p className="text-ink/65 text-sm leading-relaxed mb-4">
-              Live, interactive classes from anywhere — ideal if you're outside Subhash Nagar
+              Live, interactive classes from anywhere — ideal if you're outside Krishnapuri
               or prefer flexible timing.
             </p>
             <ul className="space-y-2 text-sm text-ink/70">

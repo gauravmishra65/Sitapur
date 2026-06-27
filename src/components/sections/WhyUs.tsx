@@ -11,7 +11,7 @@ const reasons = [
   {
     icon: '🏡',
     title: 'Home or Online — Your Choice',
-    body: 'Tutors visit your home in Subhash Nagar, or join from anywhere with our live online classes. Same quality, your convenience.',
+    body: 'Tutors visit your home in Krishnapuri, Sitapur, or join from anywhere with our live online classes. Same quality, your convenience.',
   },
   {
     icon: '👩‍🏫',
