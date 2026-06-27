@@ -19,9 +19,9 @@ export const siteConfig = {
   EMAIL:           'gaurav.mishra65@gmail.com',
 
   // ── Address ────────────────────────────────────────────────
-  ADDRESS_LINE1:   '2nd Lane, Krishnapuri, near RMP College',
+  ADDRESS_LINE1:   'near RMP College',
   ADDRESS_LINE2:   'Sitapur, Uttar Pradesh',
-  GOOGLE_MAPS_URL: 'https://maps.google.com',  // ← replace with real GMB link
+  GOOGLE_MAPS_URL: 'https://www.google.com/maps/search/RMP+College+Sitapur+Uttar+Pradesh',
   TIMINGS:         'Mon–Sat: 7 AM – 9 AM & 4 PM – 8 PM',
   TIMINGS_ONLINE:  'Flexible — morning, afternoon, evening slots available',
 
