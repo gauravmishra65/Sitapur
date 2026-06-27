@@ -34,8 +34,8 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text column */}
-          <div>
+          {/* Text column — always left on desktop, top on mobile */}
+          <div className="lg:order-1">
             <motion.div {...fadeUp(0)} className="flex items-center gap-3 flex-wrap">
               <Badge variant="teal">{siteConfig.GRADES_RANGE}</Badge>
               <span className="inline-flex items-center gap-1.5 bg-gold/15 border border-gold/30 text-gold-dark text-xs font-bold px-3 py-1.5 rounded-pill">
@@ -104,18 +104,19 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Illustration column */}
+          {/* Illustration column — always right on desktop */}
           <motion.div
             {...fadeUp(0.25)}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center lg:order-2"
           >
-            <div className="relative w-full max-w-md">
-              {/* Soft glow behind image */}
-              <div className="absolute inset-0 -m-6 rounded-full bg-gold/10 blur-2xl" />
+            <div className="relative w-full max-w-lg">
+              {/* Cream blob background to match page */}
+              <div className="absolute inset-0 -m-4 rounded-[40%_60%_55%_45%/45%_55%_45%_55%] bg-cream" />
               <img
                 src="/tanrica-geography-10113450_1920.png"
                 alt="Teacher explaining to attentive students in a small classroom"
-                className="relative w-full h-auto drop-shadow-xl"
+                className="relative w-full h-auto"
+                style={{ mixBlendMode: 'multiply' }}
                 width={520}
                 height={520}
               />
