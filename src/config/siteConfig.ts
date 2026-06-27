@@ -75,7 +75,7 @@ export const siteConfig = {
     { id: 'maths',    label: 'Mathematics',         emoji: '📐' },
     { id: 'science',  label: 'Science',              emoji: '🔬' },
     { id: 'english',  label: 'English',              emoji: '📖' },
-    { id: 'hindi',    label: 'Hindi',                emoji: 'हि' },
+    { id: 'hindi',    label: 'Hindi',                emoji: 'हिंदी ' },
     { id: 'social',   label: 'Social Science',       emoji: '🌍' },
     { id: 'computer', label: 'Computer Science',     emoji: '💻' },
     { id: 'accounts', label: 'Accounts & Commerce',  emoji: '📊' },
