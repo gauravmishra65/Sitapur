@@ -22,7 +22,7 @@ export const siteConfig = {
   ADDRESS_LINE1:   'near RMP College',
   ADDRESS_LINE2:   'Sitapur, Uttar Pradesh',
   GOOGLE_MAPS_URL: 'https://www.google.com/maps/search/RMP+College+Sitapur+Uttar+Pradesh',
-  TIMINGS:         'Mon–Sat: 7 AM – 9 AM & 4 PM – 8 PM',
+  TIMINGS:         'Mon–Fri: 5 PM – 8 PM | Sat & Sun: 10 AM – 7 PM',
   TIMINGS_ONLINE:  'Flexible — morning, afternoon, evening slots available',
 
   // ── Academic ───────────────────────────────────────────────
@@ -120,7 +120,7 @@ export const siteConfig = {
     },
     {
       q: 'What are the class timings?',
-      a: 'Home classes run Mon–Sat: 7 AM–9 AM (morning) and 4 PM–8 PM (evening). Online classes offer flexible morning, afternoon, and evening slots — tell us your preference when registering.',
+      a: 'Home classes run Mon–Fri: 5 PM–8 PM, and Sat & Sun: 10 AM–7 PM. Online classes offer flexible slots — tell us your preference when registering.',
     },
     {
       q: 'Is online tuition as effective as in-person?',
