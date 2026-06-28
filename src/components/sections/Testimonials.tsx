@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     childGrade: 'Class 10',
     location: 'Civil Lines, Sitapur',
     quote:
-      "Deepika ma'am explains Science concepts so clearly. We chose online since we live a bit far, and the WhatsApp doubt support has been a lifesaver before exams.",
+      "Sushma Sharma ma'am explains Science concepts so clearly. We chose online since we live a bit far, and the WhatsApp doubt support has been a lifesaver before exams.",
     stars: 5,
     mode: 'online',
   },

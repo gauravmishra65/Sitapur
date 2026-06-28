@@ -9,7 +9,7 @@ export const siteConfig = {
   SITE_NAME:       'BrightNest Tuition',
   TAGLINE:         'Small Batches. Every Child Gets Noticed.',
   HINDI_TAGLINE:   'हर बच्चे पर पूरा ध्यान — छोटी क्लास, बेहतर नतीजे',
-  OWNER_NAMES:     'Deepika & Sanjeev Vats',
+  OWNER_NAMES:     'Sushma Sharma & Sanjeev Vats',
   ESTABLISHED:     '2020',
 
   // ── Contact (replace with real values before going live) ───
@@ -132,7 +132,7 @@ export const siteConfig = {
     },
     {
       q: 'What happens after I submit the interest form?',
-      a: "Deepika or Sanjeev will personally call you within 24 hours to understand your child's needs, suggest the right batch, and schedule your free demo session. No pressure — just a friendly conversation.",
+      a: "Sushma Sharma or Sanjeev will personally call you within 24 hours to understand your child's needs, suggest the right batch, and schedule your free demo session. No pressure — just a friendly conversation.",
     },
   ],
 } as const;

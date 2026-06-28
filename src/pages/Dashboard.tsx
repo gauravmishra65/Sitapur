@@ -125,7 +125,7 @@ export default function Dashboard() {
             <h2 className="text-lg font-display font-bold text-cream mb-1">
               Contact Your Tutor
             </h2>
-            <p className="text-cream/60 text-sm">Deepika & Sanjeev Vats</p>
+            <p className="text-cream/60 text-sm">Sushma Sharma & Sanjeev Vats</p>
             <a
               href={`tel:${siteConfig.PHONE}`}
               className="flex items-center justify-center gap-2 bg-gold text-navy font-bold py-3 rounded-button min-h-[44px] text-sm hover:bg-gold-dark transition"
