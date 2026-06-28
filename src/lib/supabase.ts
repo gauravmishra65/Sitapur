@@ -12,14 +12,12 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl  = import.meta.env.VITE_SUPABASE_URL  as string;
 const supabaseAnon = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 
-if (!supabaseUrl || !supabaseAnon) {
-  console.error(
-    '[BrightNest Tuition] Missing Supabase env vars.\n' +
-    'Copy .env.example → .env.local and fill in your Supabase project URL and anon key.'
-  );
-}
-
-export const supabase = createClient(supabaseUrl ?? '', supabaseAnon ?? '');
+// Fallback to placeholder so the app renders even if env vars are missing at build time.
+// Real values must be set via VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY env vars.
+export const supabase = createClient(
+  supabaseUrl  || 'https://placeholder.supabase.co',
+  supabaseAnon || 'placeholder-anon-key'
+);
 
 // ── Database Types ───────────────────────────────────────────
 export interface InterestRegistration {
