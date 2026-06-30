@@ -40,10 +40,14 @@
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Sora', sans-serif'; }
         .hero-gradient {
             background: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
                         radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        }
+        /* Fix for sticky header covering section titles */
+        section {
+            scroll-margin-top: 80px; 
         }
     </style>
 </head>
@@ -66,10 +70,24 @@
                 <a href="#results" class="hover:text-primary transition">Results</a>
             </div>
             
-            <!-- CTA -->
+            <!-- Desktop CTA -->
             <a href="#contact" class="hidden md:block bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-amber-600 transition shadow-lg shadow-amber-500/30">
                 Book Free Demo
             </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-primary">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden flex-col mt-4 space-y-4 pb-6 px-6 font-medium text-gray-700">
+            <a href="#courses" class="block hover:text-primary transition">Courses</a>
+            <a href="#modes" class="block hover:text-primary transition">Online/Onsite</a>
+            <a href="#why-us" class="block hover:text-primary transition">Why Us</a>
+            <a href="#results" class="block hover:text-primary transition">Results</a>
+            <a href="#contact" class="block bg-accent text-white px-6 py-3 rounded-full font-semibold text-center mt-2">Book Free Demo</a>
         </div>
     </nav>
 
@@ -121,8 +139,53 @@
         </div>
     </header>
 
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Courses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive preparation for school and competitive exams.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Course Card 1 -->
+                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mx-auto mb-4">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Class 6-8</h3>
+                    <p class="text-sm text-gray-500">Foundation</p>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mx-auto mb-4">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Class 9-10</h3>
+                    <p class="text-sm text-gray-500">Board Prep</p>
+                </div>
+                <!-- Course Card 3 -->
+                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center text-mint mx-auto mb-4">
+                        <i data-lucide="atom" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Class 11-12</h3>
+                    <p class="text-sm text-gray-500">Science/Commerce</p>
+                </div>
+                <!-- Course Card 4 -->
+                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 mx-auto mb-4">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">JEE / NEET</h3>
+                    <p class="text-sm text-gray-500">Competitive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Modes Section: Online & Onsite -->
-    <section id="modes" class="py-20 bg-white">
+    <section id="modes" class="py-20 bg-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Choose How You Learn</h2>
@@ -131,7 +194,7 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Online Card -->
-                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-light">
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-white">
                     <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                         <i data-lucide="laptop" class="w-7 h-7"></i>
                     </div>
@@ -145,7 +208,7 @@
                 </div>
 
                 <!-- Onsite Card -->
-                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-light">
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-white">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6">
                         <i data-lucide="school" class="w-7 h-7"></i>
                     </div>
@@ -171,32 +234,59 @@
             
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4 mx-auto">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
                         <i data-lucide="users" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">Small Batches</h4>
                     <p class="text-gray-400 text-sm">Personal attention to every student.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center text-accent mx-auto mb-4 mx-auto">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center text-accent mx-auto mb-4">
                         <i data-lucide="message-circle-question" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">Instant Doubt Support</h4>
                     <p class="text-gray-400 text-sm">WhatsApp doubt resolution within 2 hours.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-mint/20 rounded-full flex items-center justify-center text-mint mx-auto mb-4 mx-auto">
+                    <div class="w-16 h-16 bg-mint/20 rounded-full flex items-center justify-center text-mint mx-auto mb-4">
                         <i data-lucide="file-check" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">Weekly Tests</h4>
                     <p class="text-gray-400 text-sm">Regular evaluation to track progress.</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mx-auto mb-4 mx-auto">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mx-auto mb-4">
                         <i data-lucide="bell-ring" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">Parent Updates</h4>
                     <p class="text-gray-400 text-sm">SMS & WhatsApp updates for parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Results</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">Numbers speak louder than words. Here is what our students achieved last year.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="p-6 border rounded-2xl bg-light">
+                    <h3 class="text-4xl font-extrabold text-primary mb-2">95%</h3>
+                    <p class="text-gray-600">Success Rate</p>
+                </div>
+                <div class="p-6 border rounded-2xl bg-light">
+                    <h3 class="text-4xl font-extrabold text-accent mb-2">50+</h3>
+                    <p class="text-gray-600">Distinction Holders</p>
+                </div>
+                <div class="p-6 border rounded-2xl bg-light">
+                    <h3 class="text-4xl font-extrabold text-mint mb-2">10+</h3>
+                    <p class="text-gray-600">JEE/NEET Selections</p>
+                </div>
+                <div class="p-6 border rounded-2xl bg-light">
+                    <h3 class="text-4xl font-extrabold text-purple-500 mb-2">500+</h3>
+                    <p class="text-gray-600">Happy Students</p>
                 </div>
             </div>
         </div>
@@ -252,14 +342,31 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20have%20a%20query." target="_blank" class="fixed bottom-6 right-6 z-50 bg-mint text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center group">
+    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20have%20a%20query." target="_blank" class="fixed bottom-6 right-6 z-40 bg-mint text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center group">
         <i data-lucide="message-circle" class="w-7 h-7"></i>
-        <span class="absolute right-full mr-4 bg-dark text-white text-sm py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap hidden md:block">Chat with us!</span>
     </a>
 
-    <!-- Initialize Lucide Icons -->
+    <!-- Initialize Lucide Icons & Mobile Menu Script -->
     <script>
+        // Initialize Icons
         lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
     </script>
 </body>
 </html>
