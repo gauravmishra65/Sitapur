@@ -1,24 +1,265 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BrightNest Tuition — Small batch home & online tuition in Sitapur. Nursery to Class 12, all subjects. Personalized attention by Sanjeev Vats." />
-    <meta name="keywords" content="home tuition Sitapur, online tuition Sitapur, small batch tuition, Krishnapuri tuition, CBSE tuition Sitapur, RMP College tuition" />
-    <meta property="og:title" content="BrightNest Tuition — Small Batches. Every Child Gets Noticed." />
-    <meta property="og:description" content="Personalized home & online tuition in Sitapur. Max 6–8 students per batch." />
-    <meta property="og:type" content="website" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AarambhClases | Online & Onsite Tuition in Sitapur</title>
+    <meta name="description" content="AarambhClases - Sitapur's smartest classroom. Learn online or onsite. Live classes, expert teachers, weekly tests for Class 6-12, JEE, NEET. Book a free demo!">
+    
+    <!-- Tailwind CSS (CDN for easy setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons for modern graphics -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts: Inter for body, Sora for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A', // Deep Indigo (Trust)
+                        accent: '#F59E0B',  // Warm Amber (Energy)
+                        mint: '#10B981',    // Mint (Success)
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        heading: ['Sora', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
 
-    <!-- Google Fonts: Fraunces + Manrope + Noto Sans Devanagari -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Sticky Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl">A</div>
+                <span class="font-heading text-2xl font-bold text-primary">Aarambh<span class="text-accent">Clases</span></span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
+                <a href="#courses" class="hover:text-primary transition">Courses</a>
+                <a href="#modes" class="hover:text-primary transition">Online/Onsite</a>
+                <a href="#why-us" class="hover:text-primary transition">Why Us</a>
+                <a href="#results" class="hover:text-primary transition">Results</a>
+            </div>
+            
+            <!-- CTA -->
+            <a href="#contact" class="hidden md:block bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-amber-600 transition shadow-lg shadow-amber-500/30">
+                Book Free Demo
+            </a>
+        </div>
+    </nav>
 
-    <title>BrightNest Tuition — Small Batches. Every Child Gets Noticed.</title>
-  </head>
-  <body class="bg-cream font-sans text-ink antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Hero Section -->
+    <header class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <span class="inline-block bg-mint/10 text-mint px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+                    🚀 Admissions Open 2025-26 Batch
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-dark">
+                    Sitapur's Smartest Classroom. <span class="text-primary">Online & Onsite.</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    Live classes, expert teachers, weekly tests, and parent reports — all in one place. Class 6 to 12, JEE, NEET, and competitive exams.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-blue-800 transition shadow-lg shadow-blue-500/30">
+                        Book Your Free Demo
+                    </a>
+                    <a href="#courses" class="bg-white border-2 border-gray-200 text-dark px-8 py-4 rounded-full font-semibold text-center hover:border-primary hover:text-primary transition">
+                        Explore Courses
+                    </a>
+                </div>
+                <!-- Trust Bar -->
+                <div class="flex items-center space-x-6 mt-10 text-gray-500">
+                    <div class="flex items-center"><span class="text-accent text-xl mr-1">★★★★★</span> 4.9 Rating</div>
+                    <div class="flex items-center"><i data-lucide="users" class="w-5 h-5 mr-2"></i> 500+ Students</div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <!-- Hero Graphic / Image Placeholder -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students learning at AarambhClases" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+                </div>
+                <!-- Floating Card -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl hidden md:flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-mint/20 rounded-full flex items-center justify-center text-mint">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-dark">95% Scored</p>
+                        <p class="text-xs text-gray-500">Above 80% in Boards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modes Section: Online & Onsite -->
+    <section id="modes" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Choose How You Learn</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Flexibility meets quality. Whether you prefer the comfort of your home or the environment of a classroom, we've got you covered.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Online Card -->
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-light">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                        <i data-lucide="laptop" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Online Live Classes</h3>
+                    <p class="text-gray-600 mb-6">Interactive live sessions, recorded lectures for revision, and instant doubt resolution on chat.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> HD Live Interactive Classes</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Access to Recordings</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Dedicated Doubt Support</li>
+                    </ul>
+                </div>
+
+                <!-- Onsite Card -->
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-light">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6">
+                        <i data-lucide="school" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Onsite Coaching</h3>
+                    <p class="text-gray-600 mb-6">Visit our Sitapur center for face-to-face learning, a competitive environment, and physical study material.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Small Batch Sizes (Max 20)</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Regular Mock Tests</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Print Notes & Library Access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 bg-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why AarambhClases?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We focus on results, not just rote learning.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4 mx-auto">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Small Batches</h4>
+                    <p class="text-gray-400 text-sm">Personal attention to every student.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center text-accent mx-auto mb-4 mx-auto">
+                        <i data-lucide="message-circle-question" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Instant Doubt Support</h4>
+                    <p class="text-gray-400 text-sm">WhatsApp doubt resolution within 2 hours.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-mint/20 rounded-full flex items-center justify-center text-mint mx-auto mb-4 mx-auto">
+                        <i data-lucide="file-check" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Weekly Tests</h4>
+                    <p class="text-gray-400 text-sm">Regular evaluation to track progress.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mx-auto mb-4 mx-auto">
+                        <i data-lucide="bell-ring" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Parent Updates</h4>
+                    <p class="text-gray-400 text-sm">SMS & WhatsApp updates for parents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="bg-primary rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+                <!-- Background Pattern -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-mint/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
+                    <p class="text-blue-100 mb-8 max-w-xl mx-auto">Book a free demo class today and experience the AarambhClases difference.</p>
+                    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20want%20to%20book%20a%20free%20demo%20class." target="_blank" class="inline-flex items-center bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-xl">
+                        <i data-lucide="calendar-check" class="w-5 h-5 mr-2"></i>
+                        Book Free Demo on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl">A</div>
+                    <span class="font-heading text-2xl font-bold text-white">Aarambh<span class="text-accent">Clases</span></span>
+                </div>
+                <p>Padhai, har ghar, har screen. Sitapur's smartest classroom.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#courses" class="hover:text-white transition">Courses</a></li>
+                    <li><a href="#why-us" class="hover:text-white transition">Why Us</a></li>
+                    <li><a href="#results" class="hover:text-white transition">Results</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contact Us</h4>
+                <p class="flex items-center mb-2"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Sitapur, Uttar Pradesh</p>
+                <p class="flex items-center mb-2"><i data-lucide="phone" class="w-4 h-4 mr-2"></i> +91 9999999999</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            <p>&copy; 2024 AarambhClases. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20have%20a%20query." target="_blank" class="fixed bottom-6 right-6 z-50 bg-mint text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="absolute right-full mr-4 bg-dark text-white text-sm py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap hidden md:block">Chat with us!</span>
+    </a>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
