@@ -3,370 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AarambhClases | Online & Onsite Tuition in Sitapur</title>
-    <meta name="description" content="AarambhClases - Sitapur's smartest classroom. Learn online or onsite. Live classes, expert teachers, weekly tests for Class 6-12, JEE, NEET. Book a free demo!">
-    
-    <!-- Tailwind CSS (CDN for easy setup) -->
+    <title>AarambhClasses - Sitapur's Smartest Classroom</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons for modern graphics -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts: Inter for body, Sora for headings -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A', // Deep Indigo (Trust)
-                        accent: '#F59E0B',  // Warm Amber (Energy)
-                        mint: '#10B981',    // Mint (Success)
-                        dark: '#0F172A',
-                        light: '#F8FAFC'
-                    },
-                    fontFamily: {
-                        heading: ['Sora', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Sora', sans-serif'; }
-        .hero-gradient {
-            background: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #09090b; color: #ffffff; overflow-x: hidden; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        /* Fix for sticky header covering section titles */
-        section {
-            scroll-margin-top: 80px; 
+        .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 6px rgba(99,102,241,0.4)) drop-shadow(0 0 12px rgba(217,70,239,0.2)); }
+            50% { filter: drop-shadow(0 0 10px rgba(99,102,241,0.7)) drop-shadow(0 0 20px rgba(217,70,239,0.4)); }
+        }
+        .logo-icon { animation: logoGlow 3s ease-in-out infinite; }
+
+        @keyframes sproutGrow {
+            0% { transform: scaleY(0); transform-origin: bottom center; opacity: 0; }
+            60% { transform: scaleY(1.1); opacity: 1; }
+            100% { transform: scaleY(1); transform-origin: bottom center; opacity: 1; }
+        }
+        .sprout-anim { animation: sproutGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; transform: scaleY(0); transform-origin: bottom center; }
+
+        @keyframes dotPulse {
+            0%, 100% { r: 3.5; opacity: 1; }
+            50% { r: 4.5; opacity: 0.7; }
+        }
+        .dot-pulse { animation: dotPulse 2s ease-in-out infinite; }
+
+        .gradient-text {
+            background: linear-gradient(to right, #a5b4fc, #ffffff, #a1a1aa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .gradient-text-accent {
+            background: linear-gradient(to top right, #6366f1, #d946ef);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .course-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; position: relative; overflow: hidden;
+        }
+        .course-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(99,102,241,0.08), transparent);
+            opacity: 0; transition: opacity 0.5s; pointer-events: none; z-index: 1;
+        }
+        .course-card:hover::before { opacity: 1; }
+        .course-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border-color: rgba(255,255,255,0.15) !important; }
+        .course-card.active { border-color: rgba(99,102,241,0.5) !important; box-shadow: 0 0 20px rgba(99,102,241,0.15), inset 0 1px 0 rgba(99,102,241,0.2); }
+        .course-card.active .card-indicator { background: linear-gradient(to top right, #6366f1, #d946ef); box-shadow: 0 0 10px rgba(99,102,241,0.5); }
+
+        .cat-tab {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer;
+            user-select: none; -webkit-tap-highlight-color: transparent;
+        }
+        .cat-tab:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+        .cat-tab.active { background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.4); color: #a5b4fc; }
+        .cat-tab.active .tab-dot { background: #6366f1; box-shadow: 0 0 8px rgba(99,102,241,0.6); }
+
+        .subject-chip {
+            transition: all 0.25s ease; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+        }
+        .subject-chip:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
+        .subject-chip.selected { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.5); color: #a5b4fc; }
+
+        .btn-primary { position: relative; overflow: hidden; }
+        .btn-primary::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.05) 50%, transparent 54%);
+            background-size: 200% 100%; background-position: 200% 0; transition: background-position 0.8s ease;
+        }
+        .btn-primary:hover::after { background-position: -100% 0; }
+
+        .noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.2; mix-blend-mode: overlay; }
+        .bg-glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+            z-index: 10000; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s; opacity: 0;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mobile-menu.open { max-height: 400px; }
+
+        .chevron-icon { transition: transform 0.3s ease; }
+        .chevron-icon.rotated { transform: rotate(180deg); }
+
+        /* Logo text styling */
+        .logo-text-aarambh {
+            font-weight: 700; font-size: 17px; letter-spacing: -0.03em; color: #fff;
+            background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .logo-text-classes {
+            font-weight: 500; font-size: 13px; letter-spacing: 0.02em; color: #818cf8;
+            -webkit-text-fill-color: #818cf8;
         }
     </style>
 </head>
-<body class="bg-light text-dark">
+<body>
+    <!-- Noise Overlay -->
+    <svg class="noise-overlay" width="100%" height="100%">
+        <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter>
+        <rect width="100%" height="100%" filter="url(#noise)"/>
+    </svg>
 
-    <!-- Sticky Navigation -->
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl">A</div>
-                <span class="font-heading text-2xl font-bold text-primary">Aarambh<span class="text-accent">Clases</span></span>
-            </a>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
-                <a href="#courses" class="hover:text-primary transition">Courses</a>
-                <a href="#modes" class="hover:text-primary transition">Online/Onsite</a>
-                <a href="#why-us" class="hover:text-primary transition">Why Us</a>
-                <a href="#results" class="hover:text-primary transition">Results</a>
+    <!-- Background Glows -->
+    <div class="bg-glow" style="width:800px;height:500px;top:-200px;left:50%;transform:translateX(-50%);background:rgba(99,102,241,0.06);"></div>
+    <div class="bg-glow" style="width:400px;height:400px;bottom:10%;right:-100px;background:rgba(217,70,239,0.04);"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.3s ease;">
+        <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;">
+            <div style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+                <!-- Logo -->
+                <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:10px;">
+                    <div class="logo-icon" style="width:36px;height:36px;border-radius:10px;overflow:hidden;flex-shrink:0;">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="10" fill="url(#logoBg)"/>
+                            <defs>
+                                <linearGradient id="logoBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4f46e5"/>
+                                    <stop offset="0.5" stop-color="#7c3aed"/>
+                                    <stop offset="1" stop-color="#c026d3"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Abstract "A" with sprout -->
+                            <g class="sprout-anim">
+                                <!-- A shape - left leg -->
+                                <path d="M8 28 L17 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- A shape - right leg -->
+                                <path d="M17 10 L26 28" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                                <!-- A crossbar -->
+                                <path d="M11 20.5 L23 20.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                            <!-- Sprout emerging from top of A -->
+                            <g class="sprout-anim" style="animation-delay: 0.6s;">
+                                <path d="M17 10 C17 10 15 5 12 3" stroke="#a5f3fc" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                                <path d="M17 10 C17 10 19 5 22 3" stroke="#86efac" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                                <!-- Small leaves -->
+                                <ellipse cx="11.5" cy="3" rx="2.2" ry="1.5" fill="#a5f3fc" transform="rotate(-30 11.5 3)" opacity="0.9"/>
+                                <ellipse cx="22.5" cy="3" rx="2.2" ry="1.5" fill="#86efac" transform="rotate(30 22.5 3)" opacity="0.9"/>
+                            </g>
+                            <!-- Origin dot -->
+                            <circle class="dot-pulse" cx="17" cy="10" r="3.5" fill="#fbbf24"/>
+                        </svg>
+                    </div>
+                    <div style="display:flex;flex-direction:column;line-height:1.2;">
+                        <span class="logo-text-aarambh">Aarambh</span>
+                        <span class="logo-text-classes">Classes</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div style="display:flex;align-items:center;gap:8px;" class="desktop-nav">
+                    <a href="#courses" class="nav-link" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Courses</a>
+                    <a href="#features" class="nav-link" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Why Us</a>
+                    <a href="#results" class="nav-link" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Results</a>
+                    <a href="#contact" class="nav-link" style="padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Contact</a>
+                </div>
+
+                <!-- CTA + Mobile Toggle -->
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <a href="#contact" class="btn-primary desktop-nav" style="padding:8px 20px;border-radius:8px;background:#fff;color:#000;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all 0.3s;box-shadow:0 0 20px -5px rgba(255,255,255,0.2);">
+                        Enroll Now
+                        <span class="iconify" data-icon="ph:arrow-right" style="font-size:14px;"></span>
+                    </a>
+                    <button id="mobileToggle" style="display:none;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px;color:#fff;cursor:pointer;" onclick="toggleMobileMenu()">
+                        <span class="iconify" data-icon="ph:list-bold" style="font-size:20px;"></span>
+                    </button>
+                </div>
             </div>
-            
-            <!-- Desktop CTA -->
-            <a href="#contact" class="hidden md:block bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-amber-600 transition shadow-lg shadow-amber-500/30">
-                Book Free Demo
-            </a>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-primary">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden flex-col mt-4 space-y-4 pb-6 px-6 font-medium text-gray-700">
-            <a href="#courses" class="block hover:text-primary transition">Courses</a>
-            <a href="#modes" class="block hover:text-primary transition">Online/Onsite</a>
-            <a href="#why-us" class="block hover:text-primary transition">Why Us</a>
-            <a href="#results" class="block hover:text-primary transition">Results</a>
-            <a href="#contact" class="block bg-accent text-white px-6 py-3 rounded-full font-semibold text-center mt-2">Book Free Demo</a>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu">
+                <div style="padding:0 0 16px 0;display:flex;flex-direction:column;gap:4px;">
+                    <a href="#courses" onclick="closeMobileMenu()" style="padding:12px 16px;border-radius:8px;font-size:14px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Courses</a>
+                    <a href="#features" onclick="closeMobileMenu()" style="padding:12px 16px;border-radius:8px;font-size:14px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Why Us</a>
+                    <a href="#results" onclick="closeMobileMenu()" style="padding:12px 16px;border-radius:8px;font-size:14px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Results</a>
+                    <a href="#contact" onclick="closeMobileMenu()" style="padding:12px 16px;border-radius:8px;font-size:14px;font-weight:500;color:#a1a1aa;text-decoration:none;transition:all 0.2s;">Contact</a>
+                    <a href="#contact" onclick="closeMobileMenu()" style="margin-top:8px;padding:12px 16px;border-radius:8px;background:#fff;color:#000;font-size:14px;font-weight:600;text-decoration:none;text-align:center;">Enroll Now</a>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-gradient py-20 md:py-32">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <span class="inline-block bg-mint/10 text-mint px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
-                    🚀 Admissions Open 2025-26 Batch
-                </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-dark">
-                    Sitapur's Smartest Classroom. <span class="text-primary">Online & Onsite.</span>
-                </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                    Live classes, expert teachers, weekly tests, and parent reports — all in one place. Class 6 to 12 and competitive exams.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-blue-800 transition shadow-lg shadow-blue-500/30">
-                        Book Your Free Demo
-                    </a>
-                    <a href="#courses" class="bg-white border-2 border-gray-200 text-dark px-8 py-4 rounded-full font-semibold text-center hover:border-primary hover:text-primary transition">
-                        Explore Courses
-                    </a>
-                </div>
-                <!-- Trust Bar -->
-                <div class="flex items-center space-x-6 mt-10 text-gray-500">
-                    <div class="flex items-center"><span class="text-accent text-xl mr-1">★★★★★</span> 4.9 Rating</div>
-                    <div class="flex items-center"><i data-lucide="users" class="w-5 h-5 mr-2"></i> 500+ Students</div>
-                </div>
+    <section style="min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 60px 1.5rem;position:relative;z-index:1;">
+        <!-- Large background logo watermark -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.03;pointer-events:none;z-index:0;">
+            <svg width="320" height="320" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                <path d="M8 28 L17 10" stroke="#fff" stroke-width="0.8" stroke-linecap="round"/>
+                <path d="M17 10 L26 28" stroke="#fff" stroke-width="0.8" stroke-linecap="round"/>
+                <path d="M11 20.5 L23 20.5" stroke="#fff" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M17 10 C17 10 15 5 12 3" stroke="#fff" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+                <path d="M17 10 C17 10 19 5 22 3" stroke="#fff" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="animate-fade-in-up" style="margin-bottom:16px;">
+            <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:100px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);font-size:11px;font-weight:500;color:#a1a1aa;text-transform:uppercase;letter-spacing:0.05em;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 8px rgba(16,185,129,0.5);"></span>
+                Admissions Open 2025-26
+            </span>
+        </div>
+
+        <h1 class="animate-fade-in-up delay-100 gradient-text" style="font-size:clamp(28px,5vw,48px);font-weight:600;line-height:1.15;letter-spacing:-0.03em;max-width:700px;position:relative;z-index:1;">
+            Sitapur's Smartest Classroom.<br>Online & Onsite.
+        </h1>
+
+        <p class="animate-fade-in-up delay-200" style="margin-top:20px;font-size:14px;font-weight:300;color:#a1a1aa;max-width:500px;line-height:1.7;position:relative;z-index:1;">
+            From Nursery to Class 12 & Computer — complete academic excellence with expert faculty, smart tools, and proven results.
+        </p>
+
+        <div class="animate-fade-in-up delay-300" style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;">
+            <a href="#courses" class="btn-primary" style="padding:12px 28px;border-radius:10px;background:#fff;color:#000;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;box-shadow:0 0 20px -5px rgba(255,255,255,0.3);">
+                Explore Courses
+                <span class="iconify" data-icon="ph:arrow-down" style="font-size:14px;"></span>
+            </a>
+            <a href="#contact" style="padding:12px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:13px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;">
+                <span class="iconify" data-icon="ph:phone" style="font-size:14px;color:#a1a1aa;"></span>
+                Get Free Counselling
+            </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="animate-fade-in-up delay-400" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;">
+            <div style="text-align:center;">
+                <div style="font-size:24px;font-weight:600;color:#fff;" class="gradient-text-accent">500+</div>
+                <div style="font-size:11px;color:#71717a;margin-top:2px;text-transform:uppercase;letter-spacing:0.05em;">Students</div>
             </div>
-            
-            <div class="md:w-1/2 relative">
-                <!-- Hero Graphic / Image Placeholder -->
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students learning at AarambhClases" class="w-full h-auto object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-                </div>
-                <!-- Floating Card -->
-                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl hidden md:flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-mint/20 rounded-full flex items-center justify-center text-mint">
-                        <i data-lucide="trending-up" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-dark">95% Scored</p>
-                        <p class="text-xs text-gray-500">Above 80% in Boards</p>
-                    </div>
-                </div>
+            <div style="width:1px;background:rgba(255,255,255,0.1);align-self:stretch;"></div>
+            <div style="text-align:center;">
+                <div style="font-size:24px;font-weight:600;color:#fff;" class="gradient-text-accent">95%</div>
+                <div style="font-size:11px;color:#71717a;margin-top:2px;text-transform:uppercase;letter-spacing:0.05em;">Pass Rate</div>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,0.1);align-self:stretch;"></div>
+            <div style="text-align:center;">
+                <div style="font-size:24px;font-weight:600;color:#fff;" class="gradient-text-accent">15+</div>
+                <div style="font-size:11px;color:#71717a;margin-top:2px;text-transform:uppercase;letter-spacing:0.05em;">Expert Teachers</div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Courses</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive preparation for school and competitive exams.</p>
+    <section id="courses" style="padding:40px 1.5rem 80px 1.5rem;position:relative;z-index:1;">
+        <div style="max-width:80rem;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:40px;">
+                <span style="font-size:11px;font-weight:500;color:#6366f1;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;">Our Courses</span>
+                <h2 class="gradient-text" style="font-size:clamp(22px,4vw,36px);font-weight:600;letter-spacing:-0.02em;margin-top:8px;">Choose Your Learning Path</h2>
+                <p style="font-size:13px;color:#71717a;margin-top:8px;max-width:400px;margin-left:auto;margin-right:auto;">Click on any category to explore subjects and details</p>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Course Card 1 -->
-                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mx-auto mb-4">
-                        <i data-lucide="book-open" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">Class 6-8</h3>
-                    <p class="text-sm text-gray-500">Foundation</p>
-                </div>
-                <!-- Course Card 2 -->
-                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mx-auto mb-4">
-                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">Class 9-10</h3>
-                    <p class="text-sm text-gray-500">Board Prep</p>
-                </div>
-                <!-- Course Card 3 -->
-                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-mint/10 rounded-xl flex items-center justify-center text-mint mx-auto mb-4">
-                        <i data-lucide="atom" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">Class 11-12</h3>
-                    <p class="text-sm text-gray-500">Science/Commerce</p>
-                </div>
-                <!-- Course Card 4 -->
-                <div class="bg-light border border-gray-100 rounded-2xl p-6 text-center hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 mx-auto mb-4">
-                        <i data-lucide="target" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">JEE / NEET</h3>
-                    <p class="text-sm text-gray-500">Competitive</p>
+
+            <div id="categoryTabs" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;"></div>
+            <div id="courseGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;"></div>
+
+            <div id="courseDetail" style="margin-top:24px;display:none;">
+                <div class="glass-panel" style="border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,0.08);">
+                    <div id="detailContent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modes Section: Online & Onsite -->
-    <section id="modes" class="py-20 bg-light">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Choose How You Learn</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Flexibility meets quality. Whether you prefer the comfort of your home or the environment of a classroom, we've got you covered.</p>
+    <!-- Features Section -->
+    <section id="features" style="padding:60px 1.5rem 80px 1.5rem;position:relative;z-index:1;">
+        <div style="max-width:80rem;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:40px;">
+                <span style="font-size:11px;font-weight:500;color:#6366f1;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;">Why AarambhClasses</span>
+                <h2 class="gradient-text" style="font-size:clamp(22px,4vw,36px);font-weight:600;letter-spacing:-0.02em;margin-top:8px;">Built Different, Teach Better</h2>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Online Card -->
-                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-white">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-                        <i data-lucide="laptop" class="w-7 h-7"></i>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;">
+                <div class="glass-panel" style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.06);transition:all 0.4s;">
+                    <div style="width:40px;height:40px;border-radius:10px;background:rgba(99,102,241,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                        <span class="iconify" data-icon="ph:monitor-play-fill" style="font-size:20px;color:#6366f1;"></span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Online Live Classes</h3>
-                    <p class="text-gray-600 mb-6">Interactive live sessions, recorded lectures for revision, and instant doubt resolution on chat.</p>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> HD Live Interactive Classes</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Access to Recordings</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Dedicated Doubt Support</li>
-                    </ul>
+                    <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Dual Mode Learning</h3>
+                    <p style="font-size:13px;color:#71717a;line-height:1.6;">Attend classes online from home or onsite at our smart classroom — same quality, your choice.</p>
                 </div>
-
-                <!-- Onsite Card -->
-                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-2xl transition duration-300 bg-white">
-                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6">
-                        <i data-lucide="school" class="w-7 h-7"></i>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.06);transition:all 0.4s;">
+                    <div style="width:40px;height:40px;border-radius:10px;background:rgba(217,70,239,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                        <span class="iconify" data-icon="ph:chalkboard-teacher-fill" style="font-size:20px;color:#d946ef;"></span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Onsite Coaching</h3>
-                    <p class="text-gray-600 mb-6">Visit our Sitapur center for face-to-face learning, a competitive environment, and physical study material.</p>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Small Batch Sizes (Max 20)</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Regular Mock Tests</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-mint mr-3"></i> Print Notes & Library Access</li>
-                    </ul>
+                    <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Expert Faculty</h3>
+                    <p style="font-size:13px;color:#71717a;line-height:1.6;">Experienced teachers who make concepts simple and exam-ready with proven methods.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="py-20 bg-dark text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why AarambhClases?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">We focus on results, not just rote learning.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
-                        <i data-lucide="users" class="w-8 h-8"></i>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.06);transition:all 0.4s;">
+                    <div style="width:40px;height:40px;border-radius:10px;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                        <span class="iconify" data-icon="ph:clipboard-text-fill" style="font-size:20px;color:#10b981;"></span>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Small Batches</h4>
-                    <p class="text-gray-400 text-sm">Personal attention to every student.</p>
+                    <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Regular Tests & Reports</h3>
+                    <p style="font-size:13px;color:#71717a;line-height:1.6;">Weekly tests with detailed performance reports shared with parents via WhatsApp.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center text-accent mx-auto mb-4">
-                        <i data-lucide="message-circle-question" class="w-8 h-8"></i>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.06);transition:all 0.4s;">
+                    <div style="width:40px;height:40px;border-radius:10px;background:rgba(251,191,36,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+                        <span class="iconify" data-icon="ph:notebook-fill" style="font-size:20px;color:#fbbf24;"></span>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Instant Doubt Support</h4>
-                    <p class="text-gray-400 text-sm">WhatsApp doubt resolution within 2 hours.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-mint/20 rounded-full flex items-center justify-center text-mint mx-auto mb-4">
-                        <i data-lucide="file-check" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Weekly Tests</h4>
-                    <p class="text-gray-400 text-sm">Regular evaluation to track progress.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mx-auto mb-4">
-                        <i data-lucide="bell-ring" class="w-8 h-8"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Parent Updates</h4>
-                    <p class="text-gray-400 text-sm">SMS & WhatsApp updates for parents.</p>
+                    <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Complete Study Material</h3>
+                    <p style="font-size:13px;color:#71717a;line-height:1.6;">Notes, DPP sheets, previous year papers — everything provided, nothing extra to buy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Results</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-12">Numbers speak louder than words. Here is what our students achieved last year.</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                <div class="p-6 border rounded-2xl bg-light">
-                    <h3 class="text-4xl font-extrabold text-primary mb-2">95%</h3>
-                    <p class="text-gray-600">Success Rate</p>
+    <section id="results" style="padding:60px 1.5rem 80px 1.5rem;position:relative;z-index:1;">
+        <div style="max-width:80rem;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:40px;">
+                <span style="font-size:11px;font-weight:500;color:#10b981;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;">Our Results</span>
+                <h2 class="gradient-text" style="font-size:clamp(22px,4vw,36px);font-weight:600;letter-spacing:-0.02em;margin-top:8px;">Results That Speak</h2>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+                <div class="glass-panel" style="border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:36px;font-weight:700;" class="gradient-text-accent">12</div>
+                    <div style="font-size:12px;color:#71717a;margin-top:4px;">Students scored 90%+ in 2024</div>
                 </div>
-                <div class="p-6 border rounded-2xl bg-light">
-                    <h3 class="text-4xl font-extrabold text-accent mb-2">50+</h3>
-                    <p class="text-gray-600">Distinction Holders</p>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:36px;font-weight:700;" class="gradient-text-accent">95%</div>
+                    <div style="font-size:12px;color:#71717a;margin-top:4px;">Overall pass percentage</div>
                 </div>
-                <div class="p-6 border rounded-2xl bg-light">
-                    <h3 class="text-4xl font-extrabold text-mint mb-2">10+</h3>
-                    <p class="text-gray-600">JEE/NEET Selections</p>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:36px;font-weight:700;" class="gradient-text-accent">3rd</div>
+                    <div style="font-size:12px;color:#71717a;margin-top:4px;">District rank holders</div>
                 </div>
-                <div class="p-6 border rounded-2xl bg-light">
-                    <h3 class="text-4xl font-extrabold text-purple-500 mb-2">500+</h3>
-                    <p class="text-gray-600">Happy Students</p>
+                <div class="glass-panel" style="border-radius:16px;padding:28px;text-align:center;border:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:36px;font-weight:700;" class="gradient-text-accent">100%</div>
+                    <div style="font-size:12px;color:#71717a;margin-top:4px;">Parent satisfaction rate</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="py-20 bg-light">
-        <div class="container mx-auto px-6">
-            <div class="bg-primary rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
-                <!-- Background Pattern -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <div class="absolute bottom-0 left-0 w-48 h-48 bg-mint/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                
-                <div class="relative z-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
-                    <p class="text-blue-100 mb-8 max-w-xl mx-auto">Book a free demo class today and experience the AarambhClases difference.</p>
-                    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20want%20to%20book%20a%20free%20demo%20class." target="_blank" class="inline-flex items-center bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-xl">
-                        <i data-lucide="calendar-check" class="w-5 h-5 mr-2"></i>
-                        Book Free Demo on WhatsApp
-                    </a>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" style="padding:60px 1.5rem 100px 1.5rem;position:relative;z-index:1;">
+        <div style="max-width:500px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:32px;">
+                <span style="font-size:11px;font-weight:500;color:#6366f1;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;">Get Started</span>
+                <h2 class="gradient-text" style="font-size:clamp(22px,4vw,30px);font-weight:600;letter-spacing:-0.02em;margin-top:8px;">Enroll or Get Free Counselling</h2>
             </div>
+            <form id="contactForm" class="glass-panel" style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.08);">
+                <div style="margin-bottom:16px;">
+                    <label style="font-size:12px;font-weight:500;color:#a1a1aa;display:block;margin-bottom:6px;">Student Name</label>
+                    <input type="text" required placeholder="Enter student name" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                </div>
+                <div style="margin-bottom:16px;">
+                    <label style="font-size:12px;font-weight:500;color:#a1a1aa;display:block;margin-bottom:6px;">Phone Number</label>
+                    <input type="tel" required placeholder="Enter WhatsApp number" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                </div>
+                <div style="margin-bottom:16px;">
+                    <label style="font-size:12px;font-weight:500;color:#a1a1aa;display:block;margin-bottom:6px;">Select Course</label>
+                    <select id="courseSelect" required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;appearance:none;cursor:pointer;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                        <option value="" style="background:#18181b;">Choose a course...</option>
+                    </select>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="font-size:12px;font-weight:500;color:#a1a1aa;display:block;margin-bottom:6px;">Message (Optional)</label>
+                    <textarea rows="3" placeholder="Any question or requirement..." style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:13px;font-family:'Inter',sans-serif;outline:none;resize:vertical;transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(99,102,241,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;padding:12px;border-radius:10px;background:#fff;color:#000;font-size:14px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.3s;box-shadow:0 0 20px -5px rgba(255,255,255,0.2);">
+                    Submit & Get Callback
+                    <span class="iconify" data-icon="ph:paper-plane-tilt-fill" style="font-size:14px;"></span>
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center space-x-2 mb-4">
-                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl">A</div>
-                    <span class="font-heading text-2xl font-bold text-white">Aarambh<span class="text-accent">Clases</span></span>
+    <footer style="border-top:1px solid rgba(255,255,255,0.06);padding:32px 1.5rem;position:relative;z-index:1;">
+        <div style="max-width:80rem;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <div class="logo-icon" style="width:22px;height:22px;border-radius:6px;overflow:hidden;flex-shrink:0;">
+                    <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="36" height="36" rx="10" fill="url(#logoBg2)"/>
+                        <defs>
+                            <linearGradient id="logoBg2" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4f46e5"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#c026d3"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M8 28 L17 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M17 10 L26 28" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M11 20.5 L23 20.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 10 C17 10 15 5 12 3" stroke="#a5f3fc" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                        <path d="M17 10 C17 10 19 5 22 3" stroke="#86efac" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                        <circle cx="17" cy="10" r="3.5" fill="#fbbf24"/>
+                    </svg>
                 </div>
-                <p>हर बच्चे पर पूरा ध्यान — छोटी क्लास, बेहतर नतीजे.</p>
+                <span style="font-size:13px;font-weight:500;color:#71717a;">© 2025 AarambhClasses, Sitapur</span>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="#courses" class="hover:text-white transition">Courses</a></li>
-                    <li><a href="#why-us" class="hover:text-white transition">Why Us</a></li>
-                    <li><a href="#results" class="hover:text-white transition">Results</a></li>
-                </ul>
+            <div style="display:flex;gap:16px;">
+                <a href="#" style="color:#71717a;transition:color 0.2s;text-decoration:none;" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#71717a'">
+                    <span class="iconify" data-icon="ph:instagram-logo-fill" style="font-size:18px;"></span>
+                </a>
+                <a href="#" style="color:#71717a;transition:color 0.2s;text-decoration:none;" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#71717a'">
+                    <span class="iconify" data-icon="ph:youtube-logo-fill" style="font-size:18px;"></span>
+                </a>
+                <a href="#" style="color:#71717a;transition:color 0.2s;text-decoration:none;" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#71717a'">
+                    <span class="iconify" data-icon="ph:whatsapp-logo-fill" style="font-size:18px;"></span>
+                </a>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Contact Us</h4>
-                <p class="flex items-center mb-2"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Sitapur, Uttar Pradesh</p>
-                <p class="flex items-center mb-2"><i data-lucide="phone" class="w-4 h-4 mr-2"></i> +91 9999999999</p>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2024 AarambhClases. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919999999999?text=Hi%20AarambhClases,%20I%20have%20a%20query." target="_blank" class="fixed bottom-6 right-6 z-40 bg-mint text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center group">
-        <i data-lucide="message-circle" class="w-7 h-7"></i>
-    </a>
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <div class="glass-panel" style="border-radius:12px;padding:14px 24px;border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;gap:10px;">
+            <span class="iconify" data-icon="ph:check-circle-fill" style="font-size:18px;color:#10b981;"></span>
+            <span id="toastMsg" style="font-size:13px;font-weight:500;color:#fff;">Submitted!</span>
+        </div>
+    </div>
 
-    <!-- Initialize Lucide Icons & Mobile Menu Script -->
     <script>
-        // Initialize Icons
-        lucide.createIcons();
+        const courseData = {
+            "Nursery to 5th": {
+                icon: "ph:star-four-fill", color: "#fbbf24",
+                desc: "Strong foundation with fun learning for young minds",
+                subjects: ["Hindi", "English", "Mathematics", "EVS", "General Knowledge", "Drawing & Craft"],
+                details: "Interactive classes designed for early learners. Activity-based teaching with audio-visual aids, regular assessments, and parent-teacher updates.",
+                mode: "Online & Onsite", duration: "Full Session"
+            },
+            "Class 6th to 8th": {
+                icon: "ph:books-fill", color: "#6366f1",
+                desc: "Building conceptual clarity for middle school",
+                subjects: ["Hindi", "English", "Mathematics", "Science", "Social Science", "Computer Basics", "Sanskrit"],
+                details: "Focus on concept building and exam preparation. Regular tests, doubt clearing sessions, and NCERT-focused teaching methodology.",
+                mode: "Online & Onsite", duration: "Full Session"
+            },
+            "Class 9th to 10th": {
+                icon: "ph:book-open-text-fill", color: "#10b981",
+                desc: "Board exam preparation with deep concepts",
+                subjects: ["Hindi", "English", "Mathematics", "Science", "Social Science", "Computer", "Sanskrit"],
+                details: "Board-focused rigorous preparation. Chapter-wise tests, previous year paper practice, and special doubt sessions before exams.",
+                mode: "Online & Onsite", duration: "Full Session"
+            },
+            "Class 11th to 12th": {
+                icon: "ph:graduation-cap-fill", color: "#d946ef",
+                desc: "Stream-wise expert coaching for boards & beyond",
+                subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "Hindi", "English", "Computer Science", "Nursery (B.Ed Entrance Prep)"],
+                details: "Specialized faculty for each stream (Science/Commerce/Arts). Board exam focused with practical preparation, sample paper practice, and career guidance.",
+                mode: "Online & Onsite", duration: "Full Session"
+            },
+            "Computer Courses": {
+                icon: "ph:desktop-fill", color: "#3b82f6",
+                desc: "Practical computer skills for the digital age",
+                subjects: ["Basic Computer (CCC)", "Tally Prime", "MS Office", "HTML / CSS", "Python Basics", "Photoshop", "Computer for Nursery-Level Teachers", "Typing (Hindi/English)"],
+                details: "Hands-on computer training with real projects. Certificate provided on completion. Separate batches for beginners and advanced learners.",
+                mode: "Onsite (Lab)", duration: "1–6 Months"
+            }
+        };
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        let activeCategory = null;
+        let activeCard = null;
+        let selectedSubjects = new Set();
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategoryTabs();
+            renderCourseCards("all");
+            populateCourseSelect();
+            initNavbar();
+            initForm();
+            initResponsive();
         });
 
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+        function renderCategoryTabs() {
+            const container = document.getElementById('categoryTabs');
+            const categories = ["All", ...Object.keys(courseData)];
+            container.innerHTML = categories.map(cat => `
+                <button class="cat-tab ${cat === 'All' ? 'active' : ''}"
+                        data-category="${cat === 'All' ? 'all' : cat}"
+                        onclick="handleTabClick(this, '${cat === 'All' ? 'all' : cat.replace(/'/g, "\\'")}')"
+                        style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);font-size:12px;font-weight:500;color:#a1a1aa;font-family:'Inter',sans-serif;">
+                    <span class="tab-dot" style="width:5px;height:5px;border-radius:50%;background:#71717a;transition:all 0.3s;"></span>
+                    ${cat}
+                </button>
+            `).join('');
+        }
+
+        function handleTabClick(el, category) {
+            document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            activeCategory = category;
+            activeCard = null;
+            selectedSubjects.clear();
+            document.getElementById('courseDetail').style.display = 'none';
+            renderCourseCards(category);
+        }
+
+        function renderCourseCards(category) {
+            const container = document.getElementById('courseGrid');
+            const entries = category === 'all' ? Object.entries(courseData) : [[category, courseData[category]]];
+            container.innerHTML = entries.map(([name, data], idx) => `
+                <div class="course-card"
+                     data-course="${name}"
+                     onclick="handleCardClick(this, '${name.replace(/'/g, "\\'")}')"
+                     style="border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);animation:fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1) ${idx * 80}ms forwards;opacity:0;">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;position:relative;z-index:2;">
+                        <div style="width:44px;height:44px;border-radius:12px;background:${data.color}15;display:flex;align-items:center;justify-content:center;">
+                            <span class="iconify" data-icon="${data.icon}" style="font-size:22px;color:${data.color};"></span>
+                        </div>
+                        <div class="card-indicator" style="width:8px;height:8px;border-radius:50%;background:#3f3f46;transition:all 0.3s;margin-top:4px;"></div>
+                    </div>
+                    <h3 style="font-size:16px;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;position:relative;z-index:2;">${name}</h3>
+                    <p style="font-size:12px;color:#71717a;line-height:1.6;margin-bottom:16px;position:relative;z-index:2;">${data.desc}</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:2;">
+                        ${data.subjects.slice(0, 4).map(s => `<span style="padding:4px 10px;border-radius:6px;font-size:10px;font-weight:500;color:#a1a1aa;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);">${s}</span>`).join('')}
+                        ${data.subjects.length > 4 ? `<span style="padding:4px 10px;border-radius:6px;font-size:10px;font-weight:500;color:#6366f1;background:rgba(99,102,241,0.1);">+${data.subjects.length - 4} more</span>` : ''}
+                    </div>
+                    <div style="margin-top:16px;display:flex;align-items:center;gap:6px;position:relative;z-index:2;">
+                        <span style="font-size:11px;color:#6366f1;font-weight:500;">Click to view details</span>
+                        <span class="iconify chevron-icon" data-icon="ph:caret-down" style="font-size:12px;color:#6366f1;transition:transform 0.3s;"></span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleCardClick(el, courseName) {
+            const data = courseData[courseName];
+            if (!data) return;
+            const wasActive = el.classList.contains('active');
+            document.querySelectorAll('.course-card').forEach(c => { c.classList.remove('active'); c.querySelector('.chevron-icon')?.classList.remove('rotated'); });
+            if (wasActive) { activeCard = null; document.getElementById('courseDetail').style.display = 'none'; return; }
+            el.classList.add('active');
+            el.querySelector('.chevron-icon')?.classList.add('rotated');
+            activeCard = courseName;
+            selectedSubjects.clear();
+            const detailEl = document.getElementById('courseDetail');
+            const contentEl = document.getElementById('detailContent');
+            contentEl.innerHTML = `
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+                    <div style="width:48px;height:48px;border-radius:12px;background:${data.color}15;display:flex;align-items:center;justify-content:center;">
+                        <span class="iconify" data-icon="${data.icon}" style="font-size:24px;color:${data.color};"></span>
+                    </div>
+                    <div>
+                        <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.01em;">${courseName}</h3>
+                        <p style="font-size:12px;color:#71717a;margin-top:2px;">${data.desc}</p>
+                    </div>
+                </div>
+                <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+                    <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);">
+                        <span class="iconify" data-icon="ph:monitor" style="font-size:14px;color:#a1a1aa;"></span>
+                        <span style="font-size:11px;color:#a1a1aa;font-weight:500;">${data.mode}</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);">
+                        <span class="iconify" data-icon="ph:clock" style="font-size:14px;color:#a1a1aa;"></span>
+                        <span style="font-size:11px;color:#a1a1aa;font-weight:500;">${data.duration}</span>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:#a1a1aa;line-height:1.7;margin-bottom:20px;">${data.details}</p>
+                <div style="margin-bottom:20px;">
+                    <h4 style="font-size:12px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">Subjects Available <span style="color:#6366f1;">(click to select)</span></h4>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;" id="subjectChips">
+                        ${data.subjects.map(s => `<button type="button" class="subject-chip" onclick="toggleSubject(this, '${s.replace(/'/g, "\\'")}')" style="padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:#a1a1aa;font-size:12px;font-weight:500;font-family:'Inter',sans-serif;">${s}</button>`).join('')}
+                    </div>
+                </div>
+                <div id="selectedActions" style="display:none;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);">
+                    <p style="font-size:11px;color:#6366f1;font-weight:500;margin-bottom:12px;">
+                        <span class="iconify" data-icon="ph:check-circle-fill" style="font-size:13px;vertical-align:middle;"></span>
+                        Selected: <span id="selectedList"></span>
+                    </p>
+                    <a href="#contact" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:8px;background:#fff;color:#000;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.3s;">
+                        Enroll for Selected Subjects
+                        <span class="iconify" data-icon="ph:arrow-right" style="font-size:14px;"></span>
+                    </a>
+                </div>
+            `;
+            detailEl.style.display = 'block';
+            detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function toggleSubject(el, subject) {
+            if (selectedSubjects.has(subject)) { selectedSubjects.delete(subject); el.classList.remove('selected'); }
+            else { selectedSubjects.add(subject); el.classList.add('selected'); }
+            const actionsEl = document.getElementById('selectedActions');
+            const listEl = document.getElementById('selectedList');
+            if (selectedSubjects.size > 0) { actionsEl.style.display = 'block'; listEl.textContent = Array.from(selectedSubjects).join(', '); }
+            else { actionsEl.style.display = 'none'; }
+            if (activeCard) { const sel = document.getElementById('courseSelect'); for (let o of sel.options) { if (o.value === activeCard) { o.selected = true; break; } } }
+        }
+
+        function populateCourseSelect() {
+            const select = document.getElementById('courseSelect');
+            Object.keys(courseData).forEach(name => { const o = document.createElement('option'); o.value = name; o.textContent = name; o.style.background = '#18181b'; select.appendChild(o); });
+        }
+
+        function initForm() {
+            document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); showToast('Submitted! We will call you back soon.'); this.reset(); });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function initNavbar() {
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { nav.style.background = 'rgba(9,9,11,0.85)'; nav.style.backdropFilter = 'blur(12px)'; nav.style.WebkitBackdropFilter = 'blur(12px)'; nav.style.borderBottom = '1px solid rgba(255,255,255,0.06)'; }
+                else { nav.style.background = 'transparent'; nav.style.backdropFilter = 'none'; nav.style.WebkitBackdropFilter = 'none'; nav.style.borderBottom = '1px solid transparent'; }
             });
-        });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('mouseenter', () => { link.style.color = '#fff'; link.style.background = 'rgba(255,255,255,0.05)'; });
+                link.addEventListener('mouseleave', () => { link.style.color = '#a1a1aa'; link.style.background = 'transparent'; });
+            });
+        }
+
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+        function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+        function initResponsive() {
+            const check = () => {
+                const m = window.innerWidth < 768;
+                document.getElementById('mobileToggle').style.display = m ? 'block' : 'none';
+                document.querySelectorAll('.desktop-nav').forEach(el => { el.style.display = m ? 'none' : 'flex'; });
+            };
+            check();
+            window.addEventListener('resize', check);
+        }
     </script>
 </body>
 </html>
